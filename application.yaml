@@ -1,0 +1,17 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: bluegreen-app
+spec:
+  destination:
+    namespace: dev
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: dev
+    repoURL: git@github.com:c6h3un/argocd-demo-example.git #https://github.com/c6h3un/argocd-demo-example.git
+    targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: false
