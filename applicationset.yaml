@@ -15,16 +15,16 @@ spec:
         exclude: true
   template:
     metadata:
-      name: 'bluegreen-app-{{.path.basename}}'
+      name: 'bluegreen-app-{{path.basename}}'
     spec:
       project: default
       source:
         repoURL: git@github.com:c6h3un/argocd-demo-example.git
         targetRevision: HEAD
-        path: '{{.path.path}}'
+        path: '{{path}}'
       destination:
         server: https://kubernetes.default.svc
-        namespace: '{{.path.basename}}'
+        namespace: '{{path.basename}}'
       syncPolicy:
         automated:
           prune: true
