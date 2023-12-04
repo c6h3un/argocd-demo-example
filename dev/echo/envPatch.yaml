@@ -9,7 +9,7 @@ spec:
         - name: httpd
           env: 
           - name: BG_COLOR
-            value: Violet 
+            value: LightGreen #Violet
           - name: APP_MESSAGE
             value: "echo app in dev cluster"
           - name: APP_NAME
