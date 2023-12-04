@@ -11,6 +11,6 @@ spec:
           - name: BG_COLOR
             value: LightBlue
           - name: APP_MESSAGE
-            value: "echo app in dev cluster"
+            value: "echo app in ns2 namespace"
           - name: APP_NAME
-            value: echo
+            value: echo-ns2
