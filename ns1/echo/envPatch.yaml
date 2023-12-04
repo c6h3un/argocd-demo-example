@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: echo
+spec:
+  template:
+    spec:
+      containers:
+        - name: httpd
+          env: 
+          - name: BG_COLOR
+            value: Violet
+          - name: APP_MESSAGE
+            value: "echo app in ns1 namespace"
+          - name: APP_NAME
+            value: echo-ns1

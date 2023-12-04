@@ -6,25 +6,26 @@ spec:
   generators:
   - git:
       repoURL: git@github.com:c6h3un/argocd-demo-example.git
-      revision: HEAD
+      revision: multi-apps
       directories:
-      - path: '*'
+      - path: 'ns1/*'
+      - path: 'ns2/*'
       - path: base
         exclude: true
       - path: dev
         exclude: true
   template:
     metadata:
-      name: 'bluegreen-app-{{path.basename}}'
+      name: 'bluegreen-app-{{path[0]}}-{{path[1]}}'
     spec:
       project: default
       source:
         repoURL: git@github.com:c6h3un/argocd-demo-example.git
-        targetRevision: HEAD
+        targetRevision: multi-apps
         path: '{{path}}'
       destination:
         server: https://kubernetes.default.svc
-        namespace: '{{path.basename}}'
+        namespace: '{{path[0]}}'
       syncPolicy:
         automated:
           prune: true
