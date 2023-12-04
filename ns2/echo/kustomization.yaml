@@ -8,4 +8,4 @@ patches:
 
 images:
  - name: quay.io/rhn_support_chuchang/goecho
-   newTag: v1.0.1-color
+   newTag: v1.0.1

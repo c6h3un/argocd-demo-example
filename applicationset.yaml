@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: bluegreen-app
+  name: mutli-ns-apps
 spec:
   generators:
   - git:
@@ -16,7 +16,7 @@ spec:
         exclude: true
   template:
     metadata:
-      name: 'bluegreen-app-{{path[0]}}-{{path[1]}}'
+      name: 'app-{{path[0]}}-{{path[1]}}'
     spec:
       project: default
       source:
