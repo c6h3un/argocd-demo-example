@@ -22,3 +22,5 @@ spec:
       destination:
         server: https://kubernetes.default.svc
         namespace: helen
+      # syncPolicy:
+      #   automated: {}
