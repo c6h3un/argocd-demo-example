@@ -9,9 +9,8 @@ spec:
   project: default
   source:
     path: dev
-    repoURL: git@github.com:c6h3un/argocd-demo-example.git #https://github.com/c6h3un/argocd-demo-example.git
-    targetRevision: HEAD
+    repoURL: git@github.com:c6h3un/argocd-demo-example.git
   syncPolicy:
     automated:
-      prune: true
-      selfHeal: false
+      prune: true # git 上面的刪除，會不會需要去刪除對應 OCP 上面的 resource 
+      selfHeal: true # OCP 上面上面有手動修改，ArgoCD 會去改回來 
