@@ -3,6 +3,9 @@ kind: Kustomization
 resources:
 - ../../base/echo
 
+patches:
+- envPatch.yaml
+
 images:
  - name: quay.io/rhn_support_chuchang/goecho
    newTag: v1.0.0-color
