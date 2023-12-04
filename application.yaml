@@ -8,7 +8,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: base/echo
+    path: base/bgd
     repoURL: git@github.com:c6h3un/argocd-demo-example.git
     targetRevision: multi-apps
   syncPolicy:
