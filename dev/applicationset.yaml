@@ -12,7 +12,7 @@ spec:
       - path: 'dev/*'
   template:
     metadata:
-      name: 'dev-app-{{path.basename}}'
+      name: 'app-dev-{{path.basename}}'
     spec:
       project: default
       source:
@@ -21,6 +21,9 @@ spec:
         path: '{{path}}'
       destination:
         server: https://kubernetes.default.svc
-        namespace: helen
-      # syncPolicy:
-      #   automated: {}
+        namespace: dev
+      syncPolicy:
+        # automated: {}
+        # automated:
+        #   prune: true
+        #   selfHeal: true

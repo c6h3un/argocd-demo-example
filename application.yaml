@@ -8,9 +8,9 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: dev
-    repoURL: git@github.com:c6h3un/argocd-demo-example.git #https://github.com/c6h3un/argocd-demo-example.git
-    targetRevision: HEAD
+    path: base/echo
+    repoURL: git@github.com:c6h3un/argocd-demo-example.git
+    targetRevision: multi-apps
   syncPolicy:
     automated:
       prune: true
