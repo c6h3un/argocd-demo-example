@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: dev-apps
+  namespace: openshift-gitops
+spec:
+  generators:
+  - git:
+      repoURL: git@github.com:c6h3un/argocd-demo-example.git
+      revision: multi-apps
+      directories:
+      - path: 'dev/*'
+  template:
+    metadata:
+      name: 'dev-app-{{path.basename}}'
+    spec:
+      project: default
+      source:
+        repoURL: git@github.com:c6h3un/argocd-demo-example.git
+        targetRevision: multi-apps
+        path: '{{path}}'
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: helen
