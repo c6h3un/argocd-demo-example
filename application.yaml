@@ -4,7 +4,7 @@ metadata:
   name: bluegreen-app
 spec:
   destination:
-    namespace: dev
+    namespace: helen
     server: https://kubernetes.default.svc
   project: default
   source:
