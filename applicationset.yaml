@@ -3,6 +3,8 @@ kind: ApplicationSet
 metadata:
   name: mutli-ns-apps
 spec:
+  syncPolicy:
+    preserveResourcesOnDeletion: true
   generators:
   - git:
       repoURL: git@github.com:c6h3un/argocd-demo-example.git
